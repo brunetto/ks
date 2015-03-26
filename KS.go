@@ -53,7 +53,8 @@ func (distro *Distro) Populate (inFile string) () {
 	var readLine string
 	var err error
 	var nLines, voids int
-	var reg = regexp.MustCompile(`(\d\.{0,1}\d*)e{0,1}(\D{0,1}\d*)`)
+// 	var reg = regexp.MustCompile(`(\d\.{0,1}\d*)e{0,1}(\D{0,1}\d*)`)
+	var reg = regexp.MustCompile(`([+-]*\d*\.*\d*e*[+-]\d*)`) // should match any number
 	var res []string
 	var num float64
 	var exp int64
